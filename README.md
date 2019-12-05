@@ -10,7 +10,7 @@
 
 - systeminfo
 - baseboard, BIOS, CPU
-- RAM
+- RAM, available/reserved memory
 - disks, volumes, partitions
 - drive fragmentation percentage
 - network interfaces
