@@ -15,6 +15,6 @@
 - drive fragmentation percentage
 - network interfaces
 - ping & tracert times to localhost and google.com
-- OPTIONAL: `sfc /verifynow` checks for damaged system files. This takes a long time to run. Uncomment to run if desired.
+- OPTIONAL: `sfc /verifynow` checks for damaged system files. Takes a long time to run; uncomment in `winscout-main.bat` to run.
 
 [Tested on Microsoft Windows Version 10.0.17134.885.]
