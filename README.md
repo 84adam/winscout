@@ -1,0 +1,2 @@
+# winscout
+PC diagnostic scripts
