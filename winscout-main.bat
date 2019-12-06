@@ -12,6 +12,9 @@ REM Section 1: System and OS information.
 echo %y%
 echo SYSTEM INFO
 echo %y%
+echo MAC ADDRESSES
+ipconfig /all | findstr Physical
+echo %y%
 ver
 systeminfo
 echo %y%
@@ -74,7 +77,7 @@ echo NETWORK INTERFACE CONFIGURATION
 echo %y%
 netsh interface show interface
 echo %y%
-ipconfig
+ipconfig /all
 echo %y%
 echo PATHPING: LOCALHOST
 pathping /h 5 localhost /q 5
