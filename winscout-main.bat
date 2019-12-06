@@ -1,12 +1,14 @@
-@echo OFF 
+@echo off
 
 REM This batch file captures OS, hardware, and networking configuration/status.
 title Winscout
 echo Checking system information...
 
-REM Horizontal Rule
+REM Horizontal Rules:
 set y=----------
 set y=%y%%y%%y%%y%%y%%y%%y%%y%
+set z=__________
+set z=%z%%z%%z%%z%%z%%z%%z%%z%
 
 REM Section 1: System and OS information.
 echo %y%
@@ -35,7 +37,6 @@ wmic memcache list
 echo %y%
 echo MEMORYCHIP
 wmic memorychip list
-
 
 REM Section 2: Check volume, drive fragmentation, and run CHKDSK (scan only).
 echo %y%
@@ -85,8 +86,23 @@ echo %y%
 echo PATHPING: GOOGLE.COM
 pathping /h 5 google.com /q 5
 
-REM OPTIONAL: Uncomment `sfc` line (delete `REM`) to run.
-REM Section 5: System File Checker (verify only).
-REM echo %y%
-REM sfc /verifyonly
-REM echo %y%
+REM Section 6 [OPTIONAL]: System File Check (Verify Only)
+echo %z%
+echo SYSTEM FILE CHECK `sfc` [VERIFY ONLY]
+:Ask
+echo Would you like to run `sfc`? (Y/N)
+set INPUT=
+set /P INPUT=Type input: %=%
+if /I "%INPUT%"=="y" goto yes 
+if /I "%INPUT%"=="n" goto no
+echo Please select 'Y'/'N': & goto Ask
+:yes
+echo %y%
+echo Starting System File Check...
+echo NOTE: Depending on the system, this may take a while.
+sfc /verifyonly
+goto cont
+:no
+echo %y%
+echo Skipping System File Check...
+:cont
