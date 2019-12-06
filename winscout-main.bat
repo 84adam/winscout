@@ -60,7 +60,13 @@ REM Section 3: List available COM devices.
 echo %y%
 mode
 
-REM Section 4: Networking information.
+REM Section 4: System Event Logs (error or critical only)
+echo %y%
+echo SYSTEM EVENT LOGS
+echo %y%
+WEVTUtil qe System /rd:true /c:25 /f:text /q:"Event[System[(Level=1  or Level=2)]]"
+
+REM Section 5: Networking information.
 echo %y%
 echo NETWORK INFO
 echo %y%
@@ -75,7 +81,6 @@ pathping /h 5 localhost /q 5
 echo %y%
 echo PATHPING: GOOGLE.COM
 pathping /h 5 google.com /q 5
-echo %y%
 
 REM OPTIONAL: Uncomment `sfc` line (delete `REM`) to run.
 REM Section 5: System File Checker (verify only).
