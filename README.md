@@ -9,6 +9,7 @@
 **Types of information gathered:**
 
 - systeminfo
+- system event logs (error/critical)
 - baseboard, BIOS, CPU
 - RAM, available/reserved memory
 - disks, volumes, partitions
@@ -17,4 +18,4 @@
 - ping & tracert times to localhost and google.com
 - OPTIONAL: `sfc /verifynow` checks for damaged system files. Takes a long time to run; uncomment in `winscout-main.bat` to run.
 
-[Tested on Microsoft Windows Version 10.0.17134.885.]
+[Tested on Microsoft Windows versions 7 and 10.]
