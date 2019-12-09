@@ -3,6 +3,8 @@
 
 REM This script tracks running time and saves output from `winscout-main.bat`.
 title Winscout Diagnoser/Helper Utility
+REM AUTHOR: Adam Anderson
+REM CODE REPOSITORY: https://github.com/84adam/winscout
 
 REM Horizontal Rules:
 set x=##########
