@@ -59,6 +59,10 @@ defrag C: /A
 echo %y%
 echo CHECK DISK
 chkdsk /scan
+echo %y%
+echo S.M.A.R.T. FAILURE PREDICTION CHECK
+echo NOTE: If not supported by drive(s), results in error: "Not supported"
+wmic /namespace:\\root\wmi path MSStorageDriver_FailurePredictStatus
 
 REM Section 3: List available COM devices.
 echo %y%
