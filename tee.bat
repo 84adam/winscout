@@ -1,6 +1,8 @@
 @if (@X)==(@Y) @end /* hybrid line, JScript comment
 
 :: --- Batch section within JScript comment that calls the internal JScript ---
+:: Author: https://stackexchange.com/users/996187/dbenham
+:: Code from answer posted here: https://stackoverflow.com/questions/10711839
 @echo off
 cscript //E:JScript //nologo "%~f0" %*
 exit /b
