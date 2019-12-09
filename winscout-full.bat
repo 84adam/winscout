@@ -2,7 +2,15 @@
 @setlocal
 
 REM This script tracks running time and saves output from `winscout-main.bat`.
-title Winscout Diagnoser
+title Winscout Diagnoser/Helper Utility
+
+REM Horizontal Rules:
+set x=##########
+set x=%x%%x%%x%%x%%x%%x%%x%%x%
+set y=----------
+set y=%y%%y%%y%%y%%y%%y%%y%%y%
+set z=__________
+set z=%z%%z%%z%%z%%z%%z%%z%%z%
 
 REM timestamp
 for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
@@ -12,7 +20,7 @@ set "datestamp=%YYYY%%MM%%DD%" & set "timestamp=%HH%%Min%%Sec%"
 set "timestamp=%datestamp%_%timestamp%"
 
 REM set filename with timestamp, save to current directory
-set "filename=output-%timestamp%.txt"
+set "filename=ws-results-%timestamp%.txt"
 set mypath=%cd%
 
 REM script start time
@@ -40,8 +48,52 @@ if 1%ms% lss 100 set ms=0%ms%
 set /a totalsecs = %hours%*3600 + %mins%*60 + %secs%
 
 REM print total running time and path to output file.
-echo DONE.
+echo SCAN COMPLETE.
 echo Total Running Time: %hours% hrs, %mins% min, %secs%.%ms% sec (%totalsecs%.%ms%s)
-echo Diagnostic results saved to "%mypath%" as "%filename%"
+echo Diagnostic results saved to disk.
+echo LOCATION: "%mypath%"
+echo FILENAME: "%filename%"
+
+REM append running time to results file
+echo. >> %filename%
+echo %x% >> %filename%
+echo %x% >> %filename%
+echo END SCAN RESULTS >> %filename%
+echo FILENAME: %filename% >> %filename%
+echo TOTAL RUNNING TIME: %hours% hrs, %mins% min, %secs%.%ms% sec (%totalsecs%.%ms%s) >> %filename%
+echo %x% >> %filename%
+echo %x% >> %filename%
+
+REM Section 7 [OPTIONAL]: Memory Check
+echo %z%
+echo MEMORY (RAM) CHECK `mdsched.exe`
+:Ask
+echo NOTE: Memory Check (`mdsched.exe`) requires a reboot.
+echo Would you like to run the Memory Check? (Y/N)
+set INPUT=
+set /P INPUT=Type input: %=%
+if /I "%INPUT%"=="y" goto yes 
+if /I "%INPUT%"=="n" goto no
+echo Please select 'Y'/'N': & goto Ask
+:yes
+echo.
+echo %y%
+echo Your system will now be rebooted in order to run the Memory Check.
+mdsched.exe
+goto cont
+:no
+echo.
+echo %y%
+echo Skipping Memory Check...
+:cont
+
+echo.
+echo %x%
+echo SCAN COMPLETE:
+echo Please share the diagnostic results with your Tech Support Rep. or IT Admin.
+echo LOCATION: "%mypath%"
+echo FILENAME: "%filename%"
+echo %x%
+echo.
 
 pause
