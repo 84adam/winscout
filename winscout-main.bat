@@ -2,6 +2,8 @@
 
 REM This batch file captures OS, hardware, and networking configuration/status.
 title Winscout Diagnoser
+REM AUTHOR: Adam Anderson
+REM CODE REPOSITORY: https://github.com/84adam/winscout
 
 REM Horizontal Rules:
 set x=##########
