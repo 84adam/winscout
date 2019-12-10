@@ -1,6 +1,6 @@
-# winscout
+# Winscout
 
-***Windows PC Diagnostic Tool***
+***Windows PC Diagnostic Utility***
 
 **`Winscout`** is a non-invasive, Windows PC diagnostic utility with no external dependencies.
 
