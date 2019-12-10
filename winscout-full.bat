@@ -1,10 +1,20 @@
 @echo off
 @setlocal
 
-REM This script tracks running time and saves output from `winscout-main.bat`.
 title Winscout Diagnoser/Helper Utility
-REM AUTHOR: Adam Anderson
-REM CODE REPOSITORY: https://github.com/84adam/winscout
+
+REM   __    __ _       __                 _   
+REM  / / /\ \ (_)_ __ / _\ ___ ___  _   _| |_ 
+REM  \ \/  \/ / | '_ \\ \ / __/ _ \| | | | __|
+REM   \  /\  /| | | | |\ \ (_| (_) | |_| | |_ 
+REM    \/  \/ |_|_| |_\__/\___\___/ \__,_|\__|
+REM                                           
+REM  Main Program: winscout-full.bat
+REM  Helper Files: winscout-main.bat, tee.bat
+REM  Winscout Diagnostic Script
+REM  Description: This script tracks running time and saves output from `winscout-main.bat`
+REM  Author: Adam Anderson
+REM  Code Repo: https://github.com/84adam/winscout
 
 REM Horizontal Rules:
 set x=##########
