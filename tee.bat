@@ -1,8 +1,23 @@
 @if (@X)==(@Y) @end /* hybrid line, JScript comment
 
 :: --- Batch section within JScript comment that calls the internal JScript ---
-:: Author: https://stackexchange.com/users/996187/dbenham
-:: Code from answer posted here: https://stackoverflow.com/questions/10711839
+::   _              _           _   
+::  | |_ ___  ___  | |__   __ _| |_ 
+::  | __/ _ \/ _ \ | '_ \ / _` | __|
+::  | ||  __/  __/_| |_) | (_| | |_ 
+::   \__\___|\___(_)_.__/ \__,_|\__|
+::                                    
+::  `tee.bat` Author: https://stackexchange.com/users/996187/dbenham
+::  Original Post: https://stackoverflow.com/questions/10711839
+::                                        
+::  Main Program: winscout-full.bat
+::  Helper Files: winscout-main.bat, tee.bat
+::  Winscout Diagnostic Script
+::  Description: This batch file echoes output while also saving it to a specified file.
+::  Winscout Author: Adam Anderson
+::  Code Repo: https://github.com/84adam/winscout
+::  
+
 @echo off
 cscript //E:JScript //nologo "%~f0" %*
 exit /b
