@@ -108,6 +108,9 @@ WEVTUtil qe System /c:10 /rd:true /f:text /q:"Event[System[(Level=1)]]"
 echo %y%
 echo Most recent ERROR (Level 2) events:
 WEVTUtil qe System /c:10 /rd:true /f:text /q:"Event[System[(Level=2)]]"
+echo %y%
+echo Most recent Memory Diagnostic Results:
+WEVTUtil qe System /c:10 /rd:true /f:text /q:"Event[System[Provider[@Name='Microsoft-Windows-MemoryDiagnostics-Results']]]"
 
 REM Section 5: Networking information.
 echo %x%
