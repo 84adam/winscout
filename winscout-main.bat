@@ -145,6 +145,9 @@ echo %y%
 echo Starting System File Check...
 echo NOTE: Depending on the system, this may take a while.
 sfc /verifyonly
+echo %y%
+echo SFC ERRORS AND WARNINGS:
+findstr /c:"[SR]" %windir%\logs\cbs\cbs.log | findstr /i "warning critical error cannot corrupt"
 goto cont
 :no
 echo.
